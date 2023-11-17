@@ -1,0 +1,143 @@
+#about {
+
+    flex-direction: column;
+    padding: 0 6em 3em 6em;
+
+    .about-body {
+
+        display: flex;
+        align-items: center;
+        color: $text-gray;
+
+        .about-img {
+
+            // width: 1100px;
+            flex: .35;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-right: 50px;
+
+            img {
+
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        .about-body-info {
+
+            flex: .8;
+            display: grid;
+            grid-template-areas: 
+            'exp edu'
+            'bio bio';
+
+            .about-info {
+
+                margin-bottom: 20px;
+                border: 2px solid lightgray;
+                padding: 20px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+
+                i {
+
+                    font-size: 1.3rem;
+                    margin-bottom: 10px;
+                    color: black;
+                }
+
+                h5 {
+
+                    font-size: 1.1rem;
+                    margin-bottom: 5px;
+                    color: black;
+                }
+            }
+
+            .experience-info {
+
+                grid-area: exp;
+                margin-right: 20px;
+                
+            }
+
+            .education-info {
+
+                grid-area: edu;
+            }
+
+            .my-bio {
+
+                grid-area: bio;
+            }
+        }
+    }
+}
+
+@include mQ(768px) {
+
+    #about {
+
+        h1 {
+
+            margin-bottom: 30px;
+        }
+
+        padding: 0 2em 3em 2em;
+
+        .about-body {
+
+            flex-direction: column;
+
+            .about-img {
+
+                flex: auto;
+                width: 16em;
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .about-body-info {
+
+                .about-info {
+
+                    align-items: center;
+                    padding: 20px;
+
+                    p {
+
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mQ(425px) {
+
+    #about {
+
+        .about-body {
+
+            .about-body-info {
+
+                flex: 1;
+                grid-template-areas: 
+                'exp'
+                'edu'
+                'bio';
+
+                .experience-info {
+
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

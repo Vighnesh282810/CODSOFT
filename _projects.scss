@@ -1,0 +1,187 @@
+#projects {
+
+    flex-direction: column;
+    padding: 6em;
+    background-color: aliceblue;
+
+    .projects-container {
+
+        display: flex;
+        // grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        gap: 30px;
+        // border: 2px solid;
+        flex-wrap: wrap;
+        width: 100%;
+        // flex-direction: column;
+
+
+        .project-card {
+
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 30px 40px;
+            @include cardShadow;
+            border-radius: 30px;
+
+            .pic-wrapper {
+
+                @include afterClickShadow;
+                width: 100%;
+                border-radius: 30px;
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+
+            .proj-pic {
+
+                // width: 100%;
+                border-radius: 30px;
+                overflow: hidden;
+                
+                
+                img {
+
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+
+            }
+
+            h2 {
+
+                margin-bottom: 20px;
+                font-size: 1.8rem;
+                font-weight: 550;
+            }
+
+            .proj-btns {
+
+                // border: 1px solid;
+                width: 360px;
+                display: flex;
+                justify-content: space-around;
+                padding: 0 40px;
+                flex-wrap: wrap;
+
+                a {
+
+                    background-color: transparent;
+                    // border: 1px solid $border-gray;
+                    border: none;
+                    outline: none;
+                    width: 120px;
+                    text-align: center;
+                    padding: 10px 0;
+                    border-radius: 30px;
+                    font-weight: 550;
+                    cursor: pointer;
+                    transition: .3s;
+                    @include beforeClickShadow;
+
+                    // &:hover {
+
+                    //     // background-color: #333;
+                    //     // color: #fff;
+                    // }
+
+                    &:active {
+
+                        @include afterClickShadow;
+                    }
+                }
+            }
+
+            &:first-child, &:nth-child(2) {
+
+                flex: .5;
+
+            }
+
+
+        }
+    }
+}
+
+@include mQ(768px) {
+
+    #projects {
+
+        padding: 6em 3em 6em 3em;
+
+        .projects-container {
+
+            .project-card {
+
+                h2 {
+
+                    text-align: center;
+                }
+
+                &:first-child, &:nth-child(2) {
+
+                    flex: 1;
+    
+                }
+            }
+        }
+    }
+}
+
+@include mQ(515px) {
+
+    #projects {
+
+        padding: 6em 1em 6em 1em;
+
+        .projects-container {
+
+            gap: 0;
+            padding: 1em 2em;
+            row-gap: 30px;
+            align-items: center;
+            justify-content: center;
+
+            .project-card {
+
+                .proj-btns {
+
+                    width: auto;
+                    height: max-content;
+                    align-items: center;
+
+                    a {
+
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mQ(425px) {
+
+    #projects {
+
+        .projects-container {
+            
+            padding: 1em;
+
+            .project-card {
+
+                padding: 20px;
+
+
+                .pic-wrapper {
+
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+

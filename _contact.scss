@@ -1,0 +1,134 @@
+#contact {
+
+    flex-direction: column;
+    padding: 6em 6em 4em 6em;
+
+    .contact-info {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid $border-gray;
+        padding: 30px;
+        border-radius: 30px;
+        // width: 400px;
+
+        div {
+
+            display: flex;
+            align-items: center;
+
+            .icon-wrapper {
+
+                background-color: #000;
+                padding: 7px 8px;
+                margin-right: 10px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // padding-top: 2px;
+                // padding-left: 2px;
+
+                i {
+
+                    color: #fff;
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                }
+            }
+
+            a {
+
+                font-size: 1.2rem;
+                transition: .3s;
+
+                &:hover {
+
+                    color: gray;
+
+                    &::after {
+
+                        width: 75%;
+                    }
+                }
+            }
+        }
+
+        .my-email {
+
+            margin-right: 30px;
+        }
+    }
+}
+
+@include mQ(515px) {
+
+    #contact {
+
+        .contact-info {
+
+            flex-direction: column;
+
+            div {
+
+                margin-bottom: 15px;
+
+                &:last-child {
+
+                    margin-bottom: 0;
+                }
+
+                .icon-wrapper {
+
+                    margin: 0;
+                }
+
+                a {
+
+                    margin-left: 10px;
+
+                    &:hover {
+
+                        &::after {
+
+                            width: 0%;
+                        }
+                    }
+                }
+            }
+
+            .my-email {
+
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+
+@include mQ(425px) {
+
+    #contact {
+
+        padding: 6em 2em 4em 2em;
+
+        h1 {
+
+            text-align: center;
+        }
+    }
+}
+
+@include mQ(375px) {
+
+    #contact {
+
+        .contact-info {
+
+            padding: 10px;
+            justify-content: center;
+            height: max-content;
+        }
+    }
+}

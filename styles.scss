@@ -1,0 +1,88 @@
+$text-gray: rgb(77, 77, 77);
+$border-gray: #a3a3a3;
+
+@mixin cardShadow {
+    box-shadow: 4px 4px 7px 3px rgba(0, 0, 0, 0.15),
+    -4px -4px 7px 3px #fff
+    ;
+}
+
+@mixin afterClickShadow {
+    box-shadow: inset 3px 3px 3px 1px rgba(0, 0, 0, 0.15),
+    inset -3px -3px 3px 1px #fff
+    ;
+}
+
+@mixin beforeClickShadow {
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.15),
+    -3px -3px 4px 1px #fff
+    ;
+}
+
+@mixin mQ($width) {
+    @media screen and (max-width: $width){
+        @content;
+    }
+}
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+body {
+
+    position: relative;
+    scroll-behavior: smooth;
+    
+}
+
+
+a {
+
+    position: relative;
+
+
+    &::after {
+
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: -10px;
+        height: 5px;
+        width: 0%;
+        background-color: gray;
+        border-radius: 2px;
+        transition: .3s linear;
+    }
+}
+
+section {
+
+    display: flex;
+    align-items: center;
+
+    h4 {
+
+        font-weight: 500;
+        color: $text-gray;
+    }
+
+    h1 {
+
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 50px;
+    }
+}
+
+
+
+@import './reset';
+@import './header';
+@import './home';
+@import './about'; 
+@import './skills'; 
+@import './projects'; 
+@import './contact'; 
+@import './footer'; 
